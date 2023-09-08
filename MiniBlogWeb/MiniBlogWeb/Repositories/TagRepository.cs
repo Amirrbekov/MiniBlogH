@@ -32,15 +32,9 @@ public class TagRepository : ITagRepository
         return null;
     }
 
-    public async Task<IEnumerable<Tag>> GetAllAsync()
-    {
-        return await _context.Tags.ToListAsync();
-    }
+    public async Task<IEnumerable<Tag>> GetAllAsync() => await _context.Tags.ToListAsync();
 
-    public Task<Tag?> GetAsync(Guid id)
-    {
-        return _context.Tags.FirstOrDefaultAsync(t => t.Id == id);
-    }
+    public async Task<Tag?> GetAsync(Guid id) =>  await _context.Tags.FirstOrDefaultAsync(t => t.Id == id);
 
     public async Task<Tag?> UpdateAsync(Tag tag)
     {

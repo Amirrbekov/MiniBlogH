@@ -15,10 +15,7 @@ public class AdminTagsController : Controller
         this.tagRepository = tagRepository;
     }
 
-    public IActionResult Add()
-    {
-        return View();
-    }
+    public IActionResult Add() => View();
 
     [HttpPost]
     public async Task<IActionResult> Add(AddTagRequest addTagRequest)
