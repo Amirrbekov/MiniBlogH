@@ -38,6 +38,8 @@ public class BlogPostRepository : IBlogPostRepository
 
     public async Task<BlogPost?> GetAsync(Guid id) => await _context.BlogPosts.Include(x => x.Tags).FirstOrDefaultAsync(t => t.Id == id);
 
+    public async Task<BlogPost?> GetByUrlHandleAsync(string UrlHandle) => await _context.BlogPosts.Include(x => x.Tags).FirstOrDefaultAsync(x => x.UrlHandle == UrlHandle);
+
     public async Task<BlogPost?> UpdateAsync(BlogPost blogPost)
     {
         var existingtag = await _context.BlogPosts.Include(x => x.Tags).FirstOrDefaultAsync(x => x.Id == blogPost.Id);

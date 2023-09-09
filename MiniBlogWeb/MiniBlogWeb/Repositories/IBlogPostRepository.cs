@@ -7,6 +7,7 @@ public interface IBlogPostRepository
     Task<IEnumerable<BlogPost>> GetAllAsync();
 
     Task<BlogPost?> GetAsync(Guid id);
+    Task<BlogPost?> GetByUrlHandleAsync(string UrlHandle);
 
     Task<BlogPost> AddAsync(BlogPost blogPost);
 
