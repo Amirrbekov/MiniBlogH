@@ -132,6 +132,8 @@ public class AdminBlogPostController : Controller
         {
             return RedirectToAction("Edit");
         }
+
+        return View(blogPost);
     }
 
     [HttpPost]

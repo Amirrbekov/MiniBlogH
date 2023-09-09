@@ -12,8 +12,8 @@ using MiniBlogWeb.Data;
 namespace MiniBlogWeb.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    [Migration("20230901193927_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230909162213_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
