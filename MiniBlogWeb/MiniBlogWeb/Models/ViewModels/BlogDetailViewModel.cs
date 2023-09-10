@@ -1,6 +1,8 @@
-﻿namespace MiniBlogWeb.Models.Domain;
+﻿using MiniBlogWeb.Models.Domain;
 
-public class BlogPost
+namespace MiniBlogWeb.Models.ViewModels;
+
+public class BlogDetailViewModel
 {
     public Guid Id { get; set; }
     public string Heading { get; set; }
@@ -16,6 +18,10 @@ public class BlogPost
     public bool Visible { get; set; }
 
     public ICollection<Tag> Tags { get; set; }
-    public ICollection<BlogPostLike> Likes { get; set; }
-    public ICollection<BlogPostComment> Comments { get; set; }
+
+    public int TotalLikes { get; set; }
+
+    public bool Liked { get; set; }
+    public string CommentDescription { get; set; }
+    public IEnumerable<BlogComment> Comments { get; set; }
 }
