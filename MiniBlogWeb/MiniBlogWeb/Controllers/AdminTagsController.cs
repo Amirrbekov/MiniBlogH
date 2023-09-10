@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MiniBlogWeb.Data;
 using MiniBlogWeb.Models.Domain;
@@ -7,6 +8,7 @@ using MiniBlogWeb.Repositories;
 
 namespace MiniBlogWeb.Controllers;
 
+[Authorize(Roles = "Admin")]
 public class AdminTagsController : Controller
 {
     private readonly ITagRepository tagRepository;

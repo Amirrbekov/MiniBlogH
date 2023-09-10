@@ -1,4 +1,5 @@
 ﻿using Azure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MiniBlogWeb.Models.Domain;
@@ -7,6 +8,7 @@ using MiniBlogWeb.Repositories;
 
 namespace MiniBlogWeb.Controllers;
 
+[Authorize(Roles = "Admin")]
 public class AdminBlogPostController : Controller
 {
     private readonly ITagRepository _tagRepository;
